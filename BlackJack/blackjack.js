@@ -81,26 +81,19 @@ let deck = [
 //deals two cards
 const deal = () => {
   for (i = 0; i <= 1; i++) {
-    if (i === 2) {
-      i = 0;
-    }
-    let deckIndex = Math.floor((Math.random() * 52));
+    let deckIndex = Math.floor((Math.random() * deck.length));
     player.push(deck[deckIndex]);
     console.log(`Player holds the ${player[i].card} of ${player[i].suite}...`);
-    deck.splice([i], 1);
-
+    deck.splice(deck[deckIndex], 1);
   }
+
   console.log();
 
   for (j = 0; j <= 1; j++) {
-    if (i === 2) {
-      i = 0;
-    }
-    let deckIndex = Math.floor((Math.random() * 52));
+    let deckIndex = Math.floor((Math.random() * deck.length));
     dealer.push(deck[deckIndex]);
     console.log(`Dealer holds the ${dealer[j].card} of ${dealer[j].suite}...`);
-    deck.splice([j], 1);
-
+    deck.splice(deck[deckIndex], 1);
   }
 
   console.log(`with ${deck.length} cards remaining...`);
